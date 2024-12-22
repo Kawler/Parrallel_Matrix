@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "310815985287",
+    "project_id": "parrallel-matrix",
+    "storage_bucket": "parrallel-matrix.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:310815985287:android:4557a3b0d3ae2ce0317222",
+        "android_client_info": {
+          "package_name": "com.kawler.parrallelmatrix"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxmnDkKX1eIUHzV2U4wrLs0X0W4ycuY_A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

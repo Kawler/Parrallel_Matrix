@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/choiceFragment">
+
+    <fragment
+        android:id="@+id/mainDeviceFragment"
+        android:name="com.kawler.parrallelmatrix.fragments.MainDeviceFragment"
+        android:label="MainDeviceFragment"
+        tools:layout="@layout/fragment_main_device"/>
+
+    <fragment
+        android:id="@+id/secondaryDeviceFragment"
+        android:name="com.kawler.parrallelmatrix.fragments.SecondaryDeviceFragment"
+        android:label="SecondaryDeviceFragment"
+        tools:layout="@layout/fragment_secondary_device"/>
+    <fragment
+        android:id="@+id/choiceFragment"
+        android:name="com.kawler.parrallelmatrix.fragments.ChoiceFragment"
+        android:label="ChoiceFragment" >
+        <action
+            android:id="@+id/action_choiceFragment_to_mainDeviceFragment"
+            app:destination="@id/mainDeviceFragment" />
+        <action
+            android:id="@+id/action_choiceFragment_to_secondaryDeviceFragment"
+            app:destination="@id/secondaryDeviceFragment" />
+    </fragment>
+
+</navigation>
