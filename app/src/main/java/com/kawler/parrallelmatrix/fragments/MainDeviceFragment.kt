@@ -51,9 +51,8 @@ class MainDeviceFragment : Fragment() {
         val colsStr = binding.matrixColsEditText.text.toString()
         val minStr = binding.minElementEditText.text.toString()
         val maxStr = binding.maxElementEditText.text.toString()
-        val devicesStr = binding.numberOfDevicesEditText.text.toString()
 
-        if (rowsStr.isEmpty() || colsStr.isEmpty() || minStr.isEmpty() || maxStr.isEmpty() || devicesStr.isEmpty()){
+        if (rowsStr.isEmpty() || colsStr.isEmpty() || minStr.isEmpty() || maxStr.isEmpty()){
             Toast.makeText(requireContext(), "Please fill in all the fields", Toast.LENGTH_SHORT).show()
             return
         }
@@ -63,16 +62,16 @@ class MainDeviceFragment : Fragment() {
         val cols = colsStr.toIntOrNull()
         val minVal = minStr.toIntOrNull()
         val maxVal = maxStr.toIntOrNull()
-        val devices = devicesStr.toIntOrNull()
 
 
-        if (rows == null || cols == null || minVal == null || maxVal == null || devices == null ) {
+
+        if (rows == null || cols == null || minVal == null || maxVal == null ) {
             Toast.makeText(requireContext(), "Invalid number input", Toast.LENGTH_SHORT).show()
             return
         }
 
 
-        viewModel.startCalculation(rows, cols, minVal, maxVal, devices)
+        viewModel.startCalculation(rows, cols, minVal, maxVal)
     }
 
     override fun onDestroyView() {

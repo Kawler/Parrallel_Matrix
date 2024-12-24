@@ -8,7 +8,7 @@ data class CalculationData @JvmOverloads constructor(
     val mainDeviceId: String = "",
     val matrixSize: MatrixSize = MatrixSize(0,0),
     val valueRange: ValueRange = ValueRange(0,0),
-    val secondaryDevices: MutableList<SecondaryDeviceData> = mutableListOf(),
+    var secondaryDevices: HashMap<String, SecondaryDeviceData> = hashMapOf(),
     val matrix: List<List<Double>> = listOf(),
     var result: CalculationResult? = null,
     val timestamp: String = java.time.Instant.now().toString()
@@ -34,9 +34,9 @@ data class CalculationPart @JvmOverloads constructor(
 
 @Serializable
 data class SecondaryDeviceData @JvmOverloads constructor(
-    val deviceId: String = "",
+    var deviceId: String = "",
     var status: String = "waiting",
-    val calculationPart: CalculationPart? = null,
+    var calculationPart: CalculationPart? = null,
     var result: CalculationResult? = null
 )
 

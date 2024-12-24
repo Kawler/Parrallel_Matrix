@@ -44,38 +44,13 @@ class SecondaryDeviceFragment : Fragment() {
         }
 
         viewModel.deviceIdValid.observe(viewLifecycleOwner){isValid ->
-            binding.deviceIdInputLayout.isEnabled = !isValid
             binding.progressBar.isVisible = isValid
             binding.resultTextView.isVisible = isValid
             binding.statusTextView.isVisible = isValid
         }
-
-        binding.deviceIdEditText.setOnEditorActionListener { _, actionId, _ ->
-            if (actionId == EditorInfo.IME_ACTION_DONE) {
-                validateDeviceIdInput()
-                return@setOnEditorActionListener true
-            }
-            return@setOnEditorActionListener false
-        }
-
+        viewModel.setDeviceId()
     }
 
-    private fun validateDeviceIdInput() {
-        val deviceIdStr = binding.deviceIdEditText.text.toString()
-
-        if(deviceIdStr.isEmpty()){
-            Toast.makeText(requireContext(), "Please fill in device id", Toast.LENGTH_SHORT).show()
-            return
-        }
-
-        val deviceId = deviceIdStr.toIntOrNull()
-
-        if (deviceId == null) {
-            Toast.makeText(requireContext(), "Invalid number input", Toast.LENGTH_SHORT).show()
-            return
-        }
-        viewModel.setDeviceId(deviceId)
-    }
 
     override fun onDestroyView() {
         super.onDestroyView()
